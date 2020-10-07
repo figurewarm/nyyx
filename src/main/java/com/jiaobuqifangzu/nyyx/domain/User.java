@@ -1,27 +1,65 @@
 package com.jiaobuqifangzu.nyyx.domain;
 
 
+import lombok.Cleanup;
+import lombok.Data;
+
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
+@Data
+@Table(name = "user")
 public class User {
 
-  private int id;
+  //用户id
+  @Id
+  @GeneratedValue(strategy= GenerationType.AUTO)
+  @Column(name = "id")
+  private Integer id;
+
+  //用户电话号码
+  @Column(name = "phone_num")
   private String phoneNum;
+
+  //用户名
+  @Column(name = "username")
   private String username;
+
+  //密码
+  @Column(name = "password")
   private String password;
+
+  //性别
+  @Column(name = "sex")
   private String sex;
-  private int userType;
+
+  //用户类型 0学生 1老师
+  @Column(name = "user_type")
+  private Integer userType;
+
+  //头像地址
+  @Column(name = "head_img")
   private String headImg;
+
+  //证件照地址
+  @Column(name = "certificates")
   private String certificates;
-  private int schoolId;
+
+  //学校号
+  @Column(name = "school_id")
+  private Integer schoolId;
+
+  //创建时间
+  @Column(name = "create_time")
   private Date createTime;
 
 
-  public int getId() {
+  public Integer getId() {
     return id;
   }
 
-  public void setId(int id) {
+  public void setId(Integer id) {
     this.id = id;
   }
 
@@ -62,11 +100,11 @@ public class User {
   }
 
 
-  public int getUserType() {
+  public Integer getUserType() {
     return userType;
   }
 
-  public void setUserType(int userType) {
+  public void setUserType(Integer userType) {
     this.userType = userType;
   }
 
@@ -89,11 +127,11 @@ public class User {
   }
 
 
-  public int getSchoolId() {
+  public Integer getSchoolId() {
     return schoolId;
   }
 
-  public void setSchoolId(int schoolId) {
+  public void setSchoolId(Integer schoolId) {
     this.schoolId = schoolId;
   }
 
