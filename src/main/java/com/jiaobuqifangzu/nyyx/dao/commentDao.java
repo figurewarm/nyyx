@@ -12,6 +12,7 @@ import java.util.List;
 /**
  * @author ChenXing
  * @date 2020/10/3 12:07
+ * 仅供测试使用!!!!!
  */
 
 public interface commentDao extends JpaRepository<Comment, Integer>{
