@@ -1,14 +1,27 @@
 package com.jiaobuqifangzu.nyyx.domain;
 
 
+import lombok.Data;
+
+import javax.persistence.*;
 import java.util.Date;
 
+@Data
+@Entity
+@Table(name = "share_files")
 public class ShareFiles {
 
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)//标注主键，且为自增长型
+  @Column(name = "id")
   private int id;
+  @Column(name = "file_name")
   private String fileName;
+  @Column(name = "user_id")
   private int userId;
+  @Column(name = "file_route")
   private String fileRoute;
+  @Column(name = "create_time")
   private Date createTime;
 
 

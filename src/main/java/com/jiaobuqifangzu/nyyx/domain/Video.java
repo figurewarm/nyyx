@@ -3,16 +3,28 @@ package com.jiaobuqifangzu.nyyx.domain;
 
 import lombok.Data;
 
+import javax.persistence.*;
 import java.util.Date;
 @Data
+@Entity
+@Table(name = "video")
 public class Video {
 
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)//标注主键，且为自增长型
+  @Column(name = "id")
   private int id;
+  @Column(name = "video_name")
   private String videoName;
+  @Column(name = "course_id")
   private int courseId;
+  @Column(name = "video_route")
   private String videoRoute;
+  @Column(name = "cover_route")
   private String coverRoute;
+  @Column(name = "create_time")
   private Date createTime;
+  @Column(name = "brief_introduction")
   private String brief_introduction;
 
   public int getId() {
