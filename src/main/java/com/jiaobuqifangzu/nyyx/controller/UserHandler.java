@@ -2,14 +2,18 @@ package com.jiaobuqifangzu.nyyx.controller;
 
 import com.jiaobuqifangzu.nyyx.dao.repository.UserRepository;
 import com.jiaobuqifangzu.nyyx.domain.User;
+import com.jiaobuqifangzu.nyyx.entityForReturn.LoginReturn;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * @author ： 卢芮
- * 用户handler
+ * 组名：交不起房组
+ * 创建人： 卢芮
+ * 日期 ：2020/10/17
+ * 描述： 用户handler
+ * 版本 ：1.0
  *！！！还未进行异常捕捉
  */
 @RestController
@@ -25,17 +29,43 @@ public class UserHandler {
 
     /**
      * 用户登录
-     * @param userReq
+     * 编写人：卢芮
+     * 日期：2020/10/17
+     * @param phone 电话号码
+     * @param password 密码
      * @return
      */
-    @PostMapping("/login")
-    public User findUserByData(@RequestBody User userReq){
-        System.out.println(userReq.getUsername());
-        User loginUser = userRepository.findByUsernameAndPassword(userReq.getUsername(), userReq.getPassword());
+    @GetMapping("/login")
+    public LoginReturn findUserByData(@RequestParam(value = "phone_num") String phone, @RequestParam(value = "password") String password){
+        //System.out.println(userReq.getUsername());
+        User userPhone = userRepository.findByPhoneNum(phone);
+        LoginReturn loginReturn = new LoginReturn();
+        User loginUser = userRepository.findByPhoneNumAndPassword(phone, password);
+
+        //用户名不存在
+        if (userPhone == null){
+
+            loginReturn.setCode(1);
+            loginReturn.setMsg("用户不存在");
+
+        }
+        //密码不正确
+        else if (loginUser == null){
+            loginReturn.setCode(2);
+            loginReturn.setMsg("密码错误");
+        }
+        //登录正确
+        else {
+            loginReturn.setCode(0);
+            loginReturn.setMsg("登录成功");
+        }
+
+        //User loginUser = userRepository.findByUsernameAndPassword(userReq.getUsername(), userReq.getPassword());
         //User user = null;
         //user = userService.findUserByUsernameAndPassword(userReq.getUsername(), userReq.getPassword());
-        System.out.println(loginUser.getId());
-        return loginUser;
+       // System.out.println(loginUser.getId());
+        return loginReturn;
+        //return loginUser;
     }
 
     /**
