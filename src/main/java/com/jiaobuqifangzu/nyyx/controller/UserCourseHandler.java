@@ -68,4 +68,6 @@ public class UserCourseHandler {
         List<UserCourse> res = userCourseRepository.findUserCoursesByUserId(usercourseReq.getUserId());
         return res;
     }
+
+
 }

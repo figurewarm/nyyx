@@ -3,6 +3,7 @@ package com.jiaobuqifangzu.nyyx.controller;
 import com.jiaobuqifangzu.nyyx.dao.repository.UserRepository;
 import com.jiaobuqifangzu.nyyx.domain.User;
 import com.jiaobuqifangzu.nyyx.entityForReturn.LoginReturn;
+import lombok.extern.log4j.Log4j;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -136,8 +137,10 @@ public class UserHandler {
      */
     public LoginReturn exitCourse(@RequestParam(value = "user_id") String userID, @RequestParam(value = "course_id") String courseID){
 
+        //检验传入参数
 
-        
+
+
 
         return null;
     }
