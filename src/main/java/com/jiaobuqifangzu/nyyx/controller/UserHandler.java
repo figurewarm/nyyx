@@ -124,4 +124,21 @@ public class UserHandler {
 
         return userInDB;
     }
+
+
+    /**
+     * 编写人：卢芮
+     * 日期：2020/10/19
+     * @param userID 用户id
+     * @param courseID 课程id
+     * 根据传入参数删除课程信息
+     * @return 课程信息
+     */
+    public LoginReturn exitCourse(@RequestParam(value = "user_id") String userID, @RequestParam(value = "course_id") String courseID){
+
+
+        
+
+        return null;
+    }
 }

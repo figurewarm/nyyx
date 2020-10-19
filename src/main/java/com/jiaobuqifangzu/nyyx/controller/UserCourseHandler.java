@@ -38,8 +38,7 @@ public class UserCourseHandler {
      * 退出课程
      *
      * @param usercourseReq
-     * @return
-     * 1 为删除成功
+     * @return 1 为删除成功
      * 0 为删除失败
      */
     @DeleteMapping("/delete")
