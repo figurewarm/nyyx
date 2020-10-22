@@ -14,9 +14,9 @@ public class FileReturn {
      * code == 0，“获取成功”
      * code == 1，“获取失败”
      */
-    int code;
-    String msg;
-    String data;
+    private int code;
+    private String msg;
+    private String data;
 
     public FileReturn(int code, String msg) {
         this.code = code;

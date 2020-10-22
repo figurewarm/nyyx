@@ -2,12 +2,8 @@ package com.jiaobuqifangzu.nyyx.controller;
 
 import com.jiaobuqifangzu.nyyx.dao.repository.VideoRepository;
 import com.jiaobuqifangzu.nyyx.domain.Video;
-import com.jiaobuqifangzu.nyyx.entityForReturn.FileReturn;
-import com.jiaobuqifangzu.nyyx.entityForReturn.LoginReturn;
-import com.jiaobuqifangzu.nyyx.entityForReturn.VideoListReturn;
-import com.jiaobuqifangzu.nyyx.entityForReturn.VideoReturn;
+import com.jiaobuqifangzu.nyyx.entityForReturn.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -27,7 +23,8 @@ public class VideoHandler {
 
     /**
      * @param course_id
-     * @return 编写人：陈星
+     * @return
+     * 编写人：陈星
      * 日期：2020/10/18
      * 输入说明：课程id
      * 输出说明：请求是否成功信息
@@ -56,10 +53,38 @@ public class VideoHandler {
     }
 
     /**
+     *
+     * @param id
+     * @return
+     * 编写人：陈星
+     * 日期：2020/10/22
+     * 输入说明：视频id
+     * 输出说明：视频信息
+     * 功能简述：查询视频信息
+     */
+
+    @GetMapping("/search")
+    public VideoInfoReturn getVideoInfo(@RequestParam(value = "id") int id) {
+        VideoInfoReturn videoInfoReturn = new VideoInfoReturn();
+        Video reV = videoRepository.findVideoById(id);
+        if (reV != null) {
+            videoInfoReturn.setCode(0);
+            videoInfoReturn.setMsg("视频消息获取成功！");
+            videoInfoReturn.setData(new VideoInfo(reV.getVideo_title(), reV.getCover_route(), reV.getVideo_route(), reV.getBrief_introduction()));
+        } else {
+            videoInfoReturn.setCode(1);
+            videoInfoReturn.setMsg("视频消息获取失败！");
+        }
+        return videoInfoReturn;
+    }
+
+
+    /**
      * 上传视频
      *
      * @param video
-     * @return 编写人：陈星
+     * @return
+     * 编写人：陈星
      * 日期：2020/10/18
      * 输入说明：视频信息
      * 输出说明：存储成功信息

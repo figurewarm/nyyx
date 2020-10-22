@@ -15,9 +15,9 @@ public class VideoListReturn {
      * code == 0，“获取成功”
      * code == 1，“获取失败”
      */
-    int code;
-    String msg;
-    List<VideoReturn> data;
+    private int code;
+    private String msg;
+    private List<VideoReturn> data;
 
     public VideoListReturn(int code, String msg) {
         this.code = code;

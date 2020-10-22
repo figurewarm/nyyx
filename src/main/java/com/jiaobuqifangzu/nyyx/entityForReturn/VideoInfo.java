@@ -2,36 +2,30 @@ package com.jiaobuqifangzu.nyyx.entityForReturn;
 
 /**
  * @author ChenXing
- * @date 2020/10/18 19:51
+ * @date 2020/10/22 15:42
  */
-public class VideoReturn {
-    /**
-     * id：视频id
-     * cover_route：视频封面
-     * video_name：视频名
-     * brief_introduction：视频简介
-     */
-    private int id;
+public class VideoInfo {
+    private String video_route;
     private String cover_route;
     private String video_name;
     private String brief_introduction;
 
-    public VideoReturn() {
+    public VideoInfo() {
     }
 
-    public VideoReturn(int id, String cover_route, String video_name, String brief_introduction) {
-        this.id = id;
+    public VideoInfo(String video_route, String cover_route, String video_name, String brief_introduction) {
+        this.video_route = video_route;
         this.cover_route = cover_route;
         this.video_name = video_name;
         this.brief_introduction = brief_introduction;
     }
 
-    public int getId() {
-        return id;
+    public String getVideo_route() {
+        return video_route;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setVideo_route(String video_route) {
+        this.video_route = video_route;
     }
 
     public String getCover_route() {

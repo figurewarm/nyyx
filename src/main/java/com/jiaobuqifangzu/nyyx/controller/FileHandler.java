@@ -71,7 +71,7 @@ public class FileHandler {
         File dest = new File(creatpath + fileName);
         try {
             file.transferTo(dest);
-            fileReturn.setCode(1);
+            fileReturn.setCode(0);
             fileReturn.setMsg("视频封面上传成功");
             fileReturn.setData("/" + filepath + "/" + fileName);
             return fileReturn;
@@ -122,7 +122,7 @@ public class FileHandler {
         File dest = new File(creatpath + fileName);
         try {
             file.transferTo(dest);
-            fileReturn.setCode(1);
+            fileReturn.setCode(0);
             fileReturn.setMsg("课程封面上传成功");
             fileReturn.setData("/" + filepath + "/" + fileName);
             return fileReturn;
@@ -173,7 +173,7 @@ public class FileHandler {
         File dest = new File(creatpath + fileName);
         try {
             file.transferTo(dest);
-            fileReturn.setCode(1);
+            fileReturn.setCode(0);
             fileReturn.setMsg("视频文件上传成功");
             fileReturn.setData("/" + filepath + "/" + fileName);
             return fileReturn;

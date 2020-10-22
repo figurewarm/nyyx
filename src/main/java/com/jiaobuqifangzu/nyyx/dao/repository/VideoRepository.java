@@ -17,4 +17,6 @@ import java.util.List;
 public interface VideoRepository extends JpaRepository<Video, Integer>, JpaSpecificationExecutor<Video> {
     @Query(value = "select * from video where course_id = :courseId", nativeQuery = true)
     public List<Video> findAllByCourse_id(@Param("courseId") Integer courseId);
+
+    public Video findVideoById(Integer id);
 }
