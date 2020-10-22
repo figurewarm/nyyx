@@ -22,4 +22,10 @@ public interface CourseRepository extends JpaRepository<Course, Integer>, JpaSpe
     public List<Course> findCoursesByTeacher_id(@Param("teacherId") Integer teacherId);
 
 
+   /**
+    * TO-DO
+    * 获取推荐课程列表
+    */
+    //模糊查询
+    public List<Course> findAllByCourseNameLike(String course_name);
 }

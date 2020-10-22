@@ -5,12 +5,18 @@ import com.jiaobuqifangzu.nyyx.domain.Course;
 //import com.sun.javadoc.SourcePosition;
 import com.jiaobuqifangzu.nyyx.entityForReturn.FileReturn;
 import com.jiaobuqifangzu.nyyx.entityForReturn.LoginReturn;
+import com.jiaobuqifangzu.nyyx.entityForReturn.MsgReturn;
+import com.jiaobuqifangzu.nyyx.entityForReturn.RecommendCourseReturn;
+
+import com.jiaobuqifangzu.nyyx.entityForReturn.CourseReturn;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 
 import javax.swing.plaf.ColorUIResource;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -55,6 +61,45 @@ public class CourseHandler {
         return new LoginReturn(1, "课程创建失败");
     }
 
+    /**
+     * 获取推荐课程列表
+     * ————推荐算法未实现
+     * @param
+     * @return
+     * 编写人：戴礼霞
+     * 日期：2020年10月22日 
+     * 输入说明：无
+     * 输出说明：推荐课程列表
+     * 功能简述：在user_course表中，计算各们课程的总数，按递减序列返回前5条数据
+     */
+    @GetMapping("/recommend")
+    public RecommendCourseReturn getRecommendCourses() {
+    	//获取推荐课程的算法未实现
+    	List<Course> res = courseRepository.findAll();
+    	
+    	return new RecommendCourseReturn(1, "课程获取失败");
+    	
+    }
+    
+    /**
+     * 根据course_name查询课程列表
+     * 
+     * @param course_name
+     * @return
+     * 编写人：戴礼霞
+     * 日期：2020年10月22日 
+     * 输入说明：
+     * 输出说明：
+     * 功能简述：
+     */
+    @GetMapping("/findCourseByCourseName")
+    public CourseReturn findCourseByCourseName(String course_name) {
+    	
+    	
+    	return new CourseReturn();
+    }
+    
+    
     /**
      * 已发布课程
      *
