@@ -8,7 +8,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Data
+
 @Table(name = "user")
 public class User {
 
@@ -36,11 +36,11 @@ public class User {
 
   //用户类型 0学生 1老师
   @Column(name = "user_type")
-  private Integer userType;
+  private Integer user_type;
 
   //头像地址
   @Column(name = "head_img")
-  private String headImg;
+  private String head_img;
 
   //证件照地址
   @Column(name = "certificates")
@@ -48,11 +48,11 @@ public class User {
 
   //学校号
   @Column(name = "school_id")
-  private Integer schoolId;
+  private Integer school_id;
 
   //创建时间
   @Column(name = "create_time")
-  private Date createTime;
+  private Date create_time;
 
 
   public Integer getId() {
@@ -63,15 +63,13 @@ public class User {
     this.id = id;
   }
 
-
   public String getPhoneNum() {
     return phoneNum;
   }
 
-  public void setPhoneNum(String phoneNum) {
-    this.phoneNum = phoneNum;
+  public void setPhoneNum(String phone_num) {
+    this.phoneNum = phone_num;
   }
-
 
   public String getUsername() {
     return username;
@@ -81,7 +79,6 @@ public class User {
     this.username = username;
   }
 
-
   public String getPassword() {
     return password;
   }
@@ -89,7 +86,6 @@ public class User {
   public void setPassword(String password) {
     this.password = password;
   }
-
 
   public String getSex() {
     return sex;
@@ -99,24 +95,21 @@ public class User {
     this.sex = sex;
   }
 
-
-  public Integer getUserType() {
-    return userType;
+  public Integer getUser_type() {
+    return user_type;
   }
 
-  public void setUserType(Integer userType) {
-    this.userType = userType;
+  public void setUser_type(Integer user_type) {
+    this.user_type = user_type;
   }
 
-
-  public String getHeadImg() {
-    return headImg;
+  public String getHead_img() {
+    return head_img;
   }
 
-  public void setHeadImg(String headImg) {
-    this.headImg = headImg;
+  public void setHead_img(String head_img) {
+    this.head_img = head_img;
   }
-
 
   public String getCertificates() {
     return certificates;
@@ -126,22 +119,22 @@ public class User {
     this.certificates = certificates;
   }
 
-
-  public Integer getSchoolId() {
-    return schoolId;
+  public Integer getSchool_id() {
+    return school_id;
   }
 
-  public void setSchoolId(Integer schoolId) {
-    this.schoolId = schoolId;
+  public void setSchool_id(Integer school_id) {
+    this.school_id = school_id;
+  }
+
+  public Date getCreate_time() {
+    return create_time;
+  }
+
+  public void setCreate_time(Date create_time) {
+    this.create_time = create_time;
   }
 
 
-  public Date getCreateTime() {
-    return createTime;
-  }
-
-  public void setCreateTime(Date createTime) {
-    this.createTime = createTime;
-  }
 
 }
