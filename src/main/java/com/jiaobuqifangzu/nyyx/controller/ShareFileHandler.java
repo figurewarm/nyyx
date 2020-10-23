@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2020/10/12 14:14
  */
 @RestController
-@RequestMapping("/video")
+@RequestMapping("/share")
 public class ShareFileHandler {
     @Autowired
     ShareFileRepository shareFileRepository;

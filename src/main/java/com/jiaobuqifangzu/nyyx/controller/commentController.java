@@ -19,24 +19,24 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/comments")
 public class commentController {
-    @Autowired
-    commentService cService;
-
-
-    @RequestMapping("/userComments")
-    public void findallcomments(@RequestParam(value = "userid") int userId){
-
-        log.info("查询所有商品信息！");
-        List<Comment> res = cService.getAllUserId(1);
-        log.info(""+res.size());
-    }
-    @RequestMapping("/all")
-    public List<Comment> findall(){
-
-        log.info("查询所有商品信息！");
-        List<Comment> res = cService.getAll();
-        log.info(""+res.size());
-        return res;
-    }
+//    @Autowired
+//    commentService cService;
+//
+//
+//    @RequestMapping("/userComments")
+//    public void findallcomments(@RequestParam(value = "userid") int userId){
+//
+//        log.info("查询所有商品信息！");
+//        List<Comment> res = cService.getAllUserId(1);
+//        log.info(""+res.size());
+//    }
+//    @RequestMapping("/all")
+//    public List<Comment> findall(){
+//
+//        log.info("查询所有商品信息！");
+//        List<Comment> res = cService.getAll();
+//        log.info(""+res.size());
+//        return res;
+//    }
 
 }

@@ -17,17 +17,17 @@ import java.util.List;
 
 public interface commentDao extends JpaRepository<Comment, Integer>{
     //新增一条评论
-    @Query(value = "insert into comment (user_id, video_id, text, create_time) VALUES\n" +
-            "(00001,00001,'这是一个视频',current_timestamp)", nativeQuery = true)
-    public List<Comment> addComment(Comment comment);
+//    @Query(value = "insert into comment (user_id, video_id, text, create_time) VALUES\n" +
+//            "(00001,00001,'这是一个视频',current_timestamp)", nativeQuery = true)
+//    public List<Comment> addComment(Comment comment);
 
 
     //查找某个id评论
-    public List<Comment> findAllByUserId(int userId);
+//    public List<Comment> findAllByUserId(int userId);
 
     //查找所有评论
-    @Query(value = "select * from comment",nativeQuery = true)
-    public  List<Comment> findAll();
+//    @Query(value = "select * from comment",nativeQuery = true)
+//    public  List<Comment> findAll();
 
 }
 

@@ -14,10 +14,10 @@ public class Comment {
   private int id;
 
   @Column(name = "user_id")
-  private int userId;
+  private int user_id;
 
   @Column(name = "video_id")
-  private int videoId;
+  private int video_id;
   @Column(name = "text")
   private String text;
 
@@ -34,23 +34,21 @@ public class Comment {
   }
 
 
-  public int getUserId() {
-    return userId;
+  public int getUser_id() {
+    return user_id;
   }
 
-  public void setUserId(int userId) {
-    this.userId = userId;
+  public void setUser_id(int user_id) {
+    this.user_id = user_id;
   }
 
-
-  public int getVideoId() {
-    return videoId;
+  public int getVideo_id() {
+    return video_id;
   }
 
-  public void setVideoId(int videoId) {
-    this.videoId = videoId;
+  public void setVideo_id(int video_id) {
+    this.video_id = video_id;
   }
-
 
   public String getText() {
     return text;

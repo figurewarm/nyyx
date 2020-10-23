@@ -14,17 +14,17 @@ import java.util.List;
  */
 @Service
 public class commentService {
-    @Autowired
-    private commentDao commentDao;
-
-
-    //返回某个人的所有评论
-    public List<Comment> getAllUserId(int userId) {
-        return commentDao.findAllByUserId(userId);
-    }
-
-    //返回所有评论
-    public List<Comment> getAll(){
-        return commentDao.findAll();
-    }
+//    @Autowired
+//    private commentDao commentDao;
+//
+//
+//    //返回某个人的所有评论
+//    public List<Comment> getAllUserId(int userId) {
+//        return commentDao.findAllByUserId(userId);
+//    }
+//
+//    //返回所有评论
+//    public List<Comment> getAll(){
+//        return commentDao.findAll();
+//    }
 }

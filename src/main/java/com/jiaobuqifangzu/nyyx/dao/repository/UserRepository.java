@@ -18,4 +18,5 @@ public interface UserRepository extends JpaRepository<User,Integer>, JpaSpecific
 
     public User findByPhoneNum(String phonenum);
 
+    public User findUserById(Integer id);
 }
