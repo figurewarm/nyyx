@@ -85,7 +85,7 @@ public class CommentHandler {
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
             for (Comment c : comments) {
                 String formattedDate = dateFormat.format(c.getCreateTime());
-                re.add(new UserComments(user.getId(), user.getUsername(), formattedDate, user.getHeadImg(), c.getText()));
+                re.add(new UserComments(user.getId(), user.getUsername(), formattedDate, user.getHead_img(), c.getText()));
             }
             result.setCode(0);
             result.setData(re);
