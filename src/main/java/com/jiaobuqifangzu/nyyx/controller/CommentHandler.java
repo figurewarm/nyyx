@@ -81,9 +81,9 @@ public class CommentHandler {
 
         if (comments.size() > 0) {
             //得到用户信息
-            User user = userRepository.findUserById(comments.get(0).getUser_id());
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
             for (Comment c : comments) {
+                User user = userRepository.findUserById(c.getUser_id());
                 String formattedDate = dateFormat.format(c.getCreateTime());
                 re.add(new UserComments(user.getId(), user.getUsername(), formattedDate, user.getHead_img(), c.getText()));
             }
