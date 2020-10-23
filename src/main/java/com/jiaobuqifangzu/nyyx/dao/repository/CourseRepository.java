@@ -27,5 +27,5 @@ public interface CourseRepository extends JpaRepository<Course, Integer>, JpaSpe
     * 获取推荐课程列表
     */
     //模糊查询
-    public List<Course> findAllByCourseNameLike(String course_name);
+    //public List<Course> findAllByCourseNameLike(String course_name);
 }
